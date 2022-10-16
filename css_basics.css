@@ -1,0 +1,346 @@
+/*
+
+// css styling
+
+1: Descendant Selectors--------------------------------------------------------------------
+<div class="content">
+  <h1>CSS Combinators</h1>
+  <p>We can select HTML elements in several ways</p>
+  <p>Here are a few.</p>
+  <ul>
+    <li>Descendant Selectors</li>
+    <li>Child Selectors</li>
+    <li>Sibling Selectors</li>
+  </ul>
+  <div>
+    <ul>
+      <li>New List</li>
+    </ul>
+  </div>
+</div>
+<div class="footer">
+  <ul>
+    <li>Footer link #1</li>
+    <li>Footer link #2</li>
+    <li>Footer link #3</li>
+  </ul>
+</div>
+
+// select the li tags in the content div.
+.content li {
+  color: blue;
+}
+// select the entire tags in the content div except the li, because not specified.
+.content {
+  color: green;
+}
+
+
+
+2: Children Selectors--------------------------------------------------------------------
+<div class="content">
+  <h1>CSS Combinators</h1>
+  <p>We can select HTML elements in several ways</p>
+  <p>Here are a few.</p>
+  <div>
+    <p>Third Paragraph</p>
+  </div>
+</div>
+
+// select the children in content div with 'p' tags only. 
+.content > p {
+  color: yellow;
+}
+
+
+
+3: Sibling Selectors----------------------------------------------------------------------
+<div id="main">
+  <ul>
+    <li>List 1</li>
+    <li>List 2</li>
+    <li>List 3</li>
+  </ul>
+  <p>First Paragraph</p>
+  <p>Second Paragraph</p>
+  <p>Third Paragraph</p>
+  <ul>
+    <li>List 1</li>
+    <li>List 2</li>
+    <li>List 3</li>
+  </ul>
+  <p>Fourth Paragraph</p>
+  <p>Fifth Paragraph</p>
+  <p>Sixth Paragraph</p>
+ </div>
+
+ // select all 'p' element that directly follows a 'ul' group.
+ Note: this method breaks when the structure of the html changes.
+ ul + p {
+  color: blue;
+}
+
+// selcts all siblings next to an element.
+Note: this method breaks when the structure of the html changes.
+ul ~ p {
+  color: blue;
+}
+
+
+Fixing Fragile css styling...=============================================================
+// give the elements of focus a class or id argument..
+.needed {
+  color: red;
+}
+
+
+
+
+Other ways to select Html elements=========================================================
+
+<p class="regular-text">some text here</p>
+<div class="regular-text">some text here</div>
+
+// Selecting elements with same class properties, but styling a particular element.
+p[class="regular-text"] {
+  color: blue;
+}
+
+
+
+
+
+
+
+
+Other CSS styling formats.=================================================================
+<div class="box-1">
+  Box 1
+</div>
+<div class="box-2">Box 2</div>
+
+1: --> Styling in an inefficient way:
+.box-1{
+  border: 1px solid red;
+  padding: 20px;
+  color: red;
+  width: 200px;
+  height: 100px;
+}
+.box-2 {
+  border: 1px solid blue;
+  color: blue;
+  padding: 20px;
+  width: 200px;
+  height: 100px;
+}
+
+
+1.1: --> If sharing some properties, we can do this instead.
+.box-1{
+  border: 1px solid red;
+  padding: 20px;
+  color: red;
+}
+.box-2 {
+  border: 1px solid blue;
+  color: blue;
+  padding: 20px;
+}
+
+.box-1, .box-2 {
+  width: 200px;
+  height: 100px;
+}
+
+
+1.2: --> another way of applying shared styling is to give both elements same class argument.
+Example: adding 'box'
+
+<div class="box-1 box">
+  Box 1
+  <p>Paragraph in box 1</p>
+</div>
+<div class="box-2 box">Box 2</div>
+
+// styling.
+.box-1{
+  border: 1px solid red;
+  padding: 20px;
+  color: red;
+}
+.box-2 {
+  border: 1px solid blue;
+  color: blue;
+  padding: 20px;
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+}
+
+// targeting the 'p' tag inside box 1
+.box p {
+
+}
+
+
+
+
+
+
+Pseudo Selectors========================================================================
+<button>Hover Me</button>
+
+// styling
+button {
+  border: none;
+  background: navy;
+  color: yellow;
+  padding: 20px;
+}
+// styling with a Pseudo method 'hover'... check MDM documentation for other methods.
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+
+
+
+
+Cascading Style Sheet=====================================================================
+How a particular style sheet takes precedence over other styles in the style sheet:
+
+Example:
+<div class="main-content">
+	<p class="main-text" id="first-paragraph">First Paragraph of Content</p>
+</div>
+
+// different ways to select the p tag for styling:
+p {color: red;}
+
+.main-text {color: blue;}
+
+#first-paragraph {color: green;}
+
+div p {color: yellow;}
+
+div .main-text {color: blue;}
+
+div #first-paragraph {color: red;}
+
+.main-content p {color: yellow;}
+
+.main-content .main-text {color: white;}
+
+.main-content #first-paragraph {color:orange;}
+
+.main-content > p {color: yellow;}
+
+div > p {color: blue;}
+
+.main-content > .main-text {color: blue;}
+
+.main-content > #first-paragraph {color: red;}
+
+
+
+
+How the CSS Precedence is being determined:===============================================
+
+<h2>Factor of determining CSS Precedence</h2>
+<ol>
+	<li class="item" id="list-item">Location of the css rule in the file</li>
+	<li class="item">Specificity of the css rule</li>
+	<ol>
+		<li>Count number of ID selectors in CSS rule</li>
+		<li>Count number of class selectors</li>
+		<li>Count number of tag selectors</li>
+	</ol>
+</ol>
+
+//
+1: --> CSS reads code from top to bottom.
+2: --> Specificity
+  .item {color: blue;}
+  li {color: green;}
+  Note: class selector is more specific than the  tag selector.
+
+  ⁡⁣⁣⁢Tag⁡ ---------------------------> ⁡⁣⁣⁢Class⁡ -------------------------------> ⁡⁣⁣⁢ID⁡
+  where Tag: is least specific, and ID is most specific.
+
+
+⁡⁣⁣⁢Another way to calculate the Specificity: ============================================⁡
+// 1st css styling
+//
+	ID selectors = 1
+	Class selectors = 0
+	Tag selectors = 1
+	specificity of 101
+//
+ol #list-item {
+	color: blue;
+}
+
+// 2nd css styling
+//
+	ID selectors = 1
+	Class selectors = 0
+	Tag selectors = 0
+	specificity of 100
+//
+#lit-item {
+	color: green;
+}
+
+
+
+
+
+⁡⁣⁣⁢Inline Styling =======================================================================⁡
+
+Note: this inline styling takes more precedence than any other styling format/methods.
+<p style="color:blue; padding: 10px">Some text</p>
+
+But...........
+
+// When the '!important' keyword is used, it takes precedence over all included the inline styling.
+
+p {
+  color: green !important;
+}
+
+
+
+
+
+
+
+⁡⁣⁣⁢The Box-Model=========================================================================
+
+Summary:
+
+⁡⁣⁢⁢1: The box model describes how much space an html element occupies on a webpage.
+
+2: This 'Space" is heavily influenced by the box-sizing property.⁡
+  --> ⁡⁣⁣⁢Content⁡ ⁡⁣⁣⁢Box⁡: you have to add content width and height to the padding and border.
+  ⁡⁣⁣⁢-->⁡ ⁡⁣⁣⁢Border Box⁡: you add the content width and height to get total space ur html content occupies.
+
+3: The 'Space' and layout is heavily influenced by the display property.
+
+4: The most important components of the Box Model are height, width, padding, border, and margin.
+
+5: All other css properties are supplementary to this Box Model content.
+
+
+
+
+
+
+
+
+
+
+*/
