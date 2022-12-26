@@ -80,7 +80,7 @@
   color: blue;
 }
 
-// selcts all siblings next to an element.
+// selects all siblings next to an element.
 Note: this method breaks when the structure of the html changes.
 ul ~ p {
   color: blue;
@@ -268,7 +268,7 @@ How the CSS Precedence is being determined:=====================================
   li {color: green;}
   Note: class selector is more specific than the  tag selector.
 
-  ⁡⁣⁣⁢Tag⁡ ---------------------------> ⁡⁣⁣⁢Class⁡ -------------------------------> ⁡⁣⁣⁢ID⁡
+  ⁡⁣⁣⁢Tag⁡ -------------------------> ⁡⁣⁣⁢Class⁡ -----------------> ⁡⁣⁣⁢ID⁡
   where Tag: is least specific, and ID is most specific.
 
 
@@ -333,6 +333,20 @@ Summary:
 4: The most important components of the Box Model are height, width, padding, border, and margin.
 
 5: All other css properties are supplementary to this Box Model content.
+
+
+
+​‌---> ⁡⁣⁣⁢Other CSS Properties⁡ ---------------------------------------------------------------
+1: px. example; 10px
+2: % example; 80%
+font-sizing:
+3: rem
+4: em
+
+
+
+
+
 
 
 
