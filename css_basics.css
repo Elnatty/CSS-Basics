@@ -339,13 +339,24 @@ Summary:
 ​‌---> ⁡⁣⁣⁢Other CSS Properties⁡ ---------------------------------------------------------------
 1: px. example; 10px
 2: % example; 80%
-font-sizing:
+font-sizing / line-height:
 3: rem
 4: em
+5: opacity --> 0.5 is 50%, 1 is 100%
+
+6: Background properties.
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
 
 
-
-
+7: Css reset..
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 
 
