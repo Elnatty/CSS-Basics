@@ -44,21 +44,36 @@ When you add a flexbox property to a parent <div> tag, the parent div becomes th
 Cheat Sheet for Flexbox...
 ⁡⁢⁣⁣https://yoksel.github.io/flex-cheatsheet/#section-flex-direction⁡
 
-⁡⁣⁢⁣Flex Container Properties
-a) display.
-b) flex-direction.
-c) justify-content.
-d) align-items.
-e) flex-wrap.
+⁡⁣⁣⁢Flex Container Properties⁡
+⁡⁣⁢⁣a) display. ie. flex
+b) flex-direction. ie; row or column or row-reverse etc..
+c) justify-content. ie: flex-start or flex-end or center.
+d) align-items. ie: flex-start or flex-end or center.
+e) flex-wrap. ie; wrap
 f) align-content⁡
 
+⁡⁣⁢⁣e) flex-wrap:⁡ is placed in the flex container and this wraps the flex items to a new line with respect to flex-shrink property of the flex items ie flex-shrink: 0, then flex-wrap: wrap --> wraps items to a new line.
 
-⁡⁣⁢⁣Flex Items Properties⁡
-a) align-self.
+⁡⁣⁢⁣c) justify-content:⁡ position flex items/children at top left or top right.
+
+⁡⁣⁢⁣d) align-items:⁡ position flex items/children at top left or top right. Same as justify-content.
+⁡⁢⁣⁢Note: both are used to center children of a parent tag/element.⁡
+
+
+⁡⁣⁣⁢
+Flex Items Properties⁡
+⁡⁣⁢⁣a) align-self.
 b) order.
 c) flex-grow.
 d) flex-shrink.
-f) flex-basis.
+f) flex-basis.⁡
+
+⁡⁣⁣⁢Explanation of Flex item:⁡
+⁡⁣⁢⁣f: flex-basis -->⁡⁡ when flex-direction of a flex container item/tag is set to row, ie: flex-direction: row; --> this means that flex-basis replaces the impact or effect of width because its in a row/horizontal direction. Basically it replaces width.
+while:
+The reverse is the case if flex-direction: column; this replaces height.
+
+⁡⁣⁢⁣d) flex-shrink: --> shrinks the flex item based on the value ie; 0 (no shrink), 0.5 (little shrink), 1 (more shrink)⁡
 
 
 
@@ -66,9 +81,9 @@ f) flex-basis.
 
 
 
-
-
-
+​‌‍‌⁡⁢⁣⁣Flexbox Summary:​⁡
+1: flex-direction goes with flex-basis.
+2: flex-wrap goes with flex-shrink and flex-basis (sizing)
 
 
 

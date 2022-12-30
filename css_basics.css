@@ -358,6 +358,18 @@ html {
   box-sizing: inherit;
 }
 
+8: width: 100vw; height: 100vh; --> this means (view width and height) of the entire screen. 
+Note: to fully apply this: set body margin to 0.
+      * or body {
+        margin: 0
+      }
+
+⁡⁣⁢⁣9: css positioning (position: relative or absolute;)⁡⁡
+Just like how flex container/parent and flex item/children works, its same with the css position property. ie. 
+⁡⁢⁣⁢--> position: relative ⁡is a flex container/parent property.
+⁡⁢⁣⁢--> position: absolute⁡ is a flex item/children (used with top, left, right, bottom: 50px) for positioning layouts acc to your taste.
+⁡⁢⁣⁢--> position: fixed⁡ --> doesn't work in relation with the relative/parent/container property. It can be applied to any element, example: maybe nav bar. It makes it fixed at a particular position.
+⁡⁢⁣⁢--> position: sticky⁡ --> places an element on the screen with respect to the scroll position. ie; position: sticky; top: 0 --> positions it at the top of the screen when scrolled to that position.
 
 
 
