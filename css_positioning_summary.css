@@ -6,7 +6,7 @@
 2) Flexbox: 
   Parent container -> display: flex; flex-direction: column; justify-content: flex-start or end or center; align-items: flex-start or end or center; flex-wrap: wrap
 
-  Child items -> flex-shrink: 0 or 0.5 or 1 or 2; flex-basis: 100px; (this is in relation to the flex-direction, either row or column), flex-grow: 10px; etc.
+  Child items -> flex-shrink: 0 or 0.5 or 1 or 2; flex-basis: 100px; (this is in relation to the flex-direction, it replaces width if flex-direction is row, either row or column), flex-grow: 10px; etc.
 
 3: Css Positioning:
   Parent -> position: relative;
